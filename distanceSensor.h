@@ -11,6 +11,8 @@ class DistanceSensor : public Sensor {
 
     double detectDistance();
     double simulateDistance();
+    void setInterval(const double &inv);
+
 
 public:
     DistanceSensor();
@@ -18,7 +20,6 @@ public:
 
     SensorInfo getInfo() override;
     void start();
-    void setInterval(const double &inv) override;
 };
 
 #endif

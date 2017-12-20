@@ -17,6 +17,9 @@ void DistanceSensor::start() {
         delay(this->interval);
         this->distance = simulateDistance();
         notifyObservers();
+        if (this->distance <= 50) {
+            this->setInterval(this->distance * 10);
+        }
     }
 }
 
