@@ -8,6 +8,7 @@ class ControllerInfo;
 template <typename T> class Subject;
 
 class Buzzer : public Monitor {
+    bool on;
     void alarm();
 
 public:

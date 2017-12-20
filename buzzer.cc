@@ -2,8 +2,9 @@
 #include <iostream>
 #include "info.h"
 #include "subject.h"
+#include "gpio_interface.h"
 
-Buzzer::Buzzer() {}
+Buzzer::Buzzer() : Monitor{}, on{false} {}
 Buzzer::~Buzzer() {}
 
 void Buzzer::notify(Subject<ControllerInfo> &whoFrom) {
@@ -15,5 +16,6 @@ void Buzzer::notify(Subject<ControllerInfo> &whoFrom) {
 
 
 void Buzzer::alarm() {
-    std::cout << "/* BUZZ */" << '\n';
+    this->on = !(this->on);
+    buzz(on);
 }
