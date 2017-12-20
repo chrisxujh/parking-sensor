@@ -12,10 +12,17 @@ void Buzzer::notify(Subject<ControllerInfo> &whoFrom) {
     if (info.distance <= 50) {
         this->alarm();
     }
+    else {
+        this->alarmOff();
+    }
 }
 
 
 void Buzzer::alarm() {
     this->on = !(this->on);
     buzz(on);
+}
+
+void Buzzer::alarmOff() {
+    buzz(off);
 }
