@@ -3,13 +3,20 @@
 
 #include "observer.h"
 #include "subject.h"
+#include <memory>
 
 class Sensor;
 class Monitor;
+class SensorInfo;
+class ControllerInfo;
 
-class Controller : public Observer, public Subject {
+struct ControllerTemp {
+    double distance;
+};
+
+class Controller : public Observer<SensorInfo>, public Subject<ControllerInfo> {
 private:
-    /* data */
+    std::unique_ptr<ControllerTemp> temp;
 
 public:
     Controller();
@@ -18,8 +25,9 @@ public:
     void addSensor(Sensor *);
     void addMonitor(Monitor *);
     void init();
-    void notify(Subject &) override;
-    Info getInfo() override;
+    void notify(Subject<SensorInfo> &) override;
+    ControllerInfo getInfo() override;
 };
+
 
 #endif

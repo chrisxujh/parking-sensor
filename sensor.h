@@ -3,16 +3,16 @@
 
 #include "subject.h"
 
-class Info;
+class SensorInfo;
 
-class Sensor : public Subject {
+class Sensor : public Subject<SensorInfo> {
 
 
 public:
     Sensor();
     virtual ~Sensor();
 
-    virtual Info getInfo() = 0;
+    virtual SensorInfo getInfo() = 0;
 };
 
 #endif

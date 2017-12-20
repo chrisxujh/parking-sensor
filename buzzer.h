@@ -3,17 +3,19 @@
 
 #include "monitor.h"
 
-class Subject;
+class ControllerInfo;
+
+template <typename T> class Subject;
 
 class Buzzer : public Monitor {
 private:
-    /* data */
+
 
 public:
     Buzzer();
     ~Buzzer();
 
-    void notify(Subject &) override;
+    void notify(Subject<ControllerInfo> &) override;
 };
 
 #endif

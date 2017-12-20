@@ -1,16 +1,17 @@
 #ifndef _OBSERVER_H_
 #define _OBSERVER_H_
 
-class Subject;
+template <typename T> class Subject;
 
+template <typename T>
 class Observer {
 private:
     /* data */
 
 public:
-    Observer();
-    virtual void notify(Subject &) = 0;
-    virtual ~Observer();
+    Observer() {}
+    virtual void notify(Subject<T> &) = 0;
+    virtual ~Observer() {}
 
 };
 

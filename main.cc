@@ -10,6 +10,6 @@ int main(int argc, char const *argv[]) {
     c.addSensor(&ds);
     c.addMonitor(&b);
     c.init();
-    ds.notifyObservers();
+    ds.start();
     return 0;
 }

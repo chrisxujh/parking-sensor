@@ -3,16 +3,18 @@
 
 #include "sensor.h"
 
-class Info;
+class SensorInfo;
 
 class DistanceSensor : public Sensor {
-
+    void simulate();
+    double distance;
 
 public:
     DistanceSensor();
     ~DistanceSensor();
 
-    Info getInfo() override;
+    SensorInfo getInfo() override;
+    void start();
 };
 
 #endif

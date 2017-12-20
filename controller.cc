@@ -4,7 +4,9 @@
 #include "monitor.h"
 #include <iostream>
 
-Controller::Controller() {}
+Controller::Controller() : Observer<SensorInfo>{}, Subject<ControllerInfo>{}, temp{std::make_unique<ControllerTemp>()} {
+    temp->distance = 1000;
+}
 Controller::~Controller() {}
 
 void Controller::addSensor(Sensor *s) {
@@ -19,10 +21,13 @@ void Controller::init() {
     notifyObservers();
 }
 
-void Controller::notify(Subject &whoFrom) {
-    std::cout << "Controller::notify()" << '\n';
+void Controller::notify(Subject<SensorInfo> &whoFrom) {
+    SensorInfo info = whoFrom.getInfo();
+    notifyObservers();
+    this->temp->distance = info.distance;
+    std::cout << "Distance: " << info.distance << '\n';
 }
 
-Info Controller::getInfo() {
-
+ControllerInfo Controller::getInfo() {
+    return ControllerInfo{this->temp->distance};
 }

@@ -1,21 +1,27 @@
 #ifndef _SUBJECT_H_
 #define _SUBJECT_H_
 #include <vector>
+#include "observer.h"
 
-class Info;
-class Observer;
-
+template <typename T>
 class Subject {
 private:
-    std::vector<Observer*> observers;
+    std::vector<Observer<T>*> observers;
 
 public:
-    Subject();
-    virtual ~Subject();
+    Subject() {}
+    virtual ~Subject() {}
 
-    virtual Info getInfo() = 0;
-    void attachObserver(Observer *);
-    void notifyObservers();
+    virtual T getInfo() = 0;
+    void attachObserver(Observer<T> *ob) {
+        observers.emplace_back(ob);
+    }
+
+    void notifyObservers() {
+        for (auto &ob : observers) {
+            ob->notify(*this);
+        }
+    }
 };
 
 #endif
