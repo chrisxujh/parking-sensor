@@ -4,5 +4,6 @@ void buzz(const bool on);
 
 void blink_green(const bool on);
 
-
 void init();
+
+double distance();

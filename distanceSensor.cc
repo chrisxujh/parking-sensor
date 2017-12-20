@@ -13,7 +13,7 @@ SensorInfo DistanceSensor::getInfo() {
 }
 
 void DistanceSensor::start() {
-    while (1) {
+    while (1 && this->interval >= 0) {
         delay(this->interval);
         this->distance = simulateDistance();
         notifyObservers();
