@@ -5,8 +5,6 @@ template <typename T> class Subject;
 
 template <typename T>
 class Observer {
-private:
-    /* data */
 
 public:
     Observer() {}

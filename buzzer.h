@@ -8,7 +8,6 @@ class ControllerInfo;
 template <typename T> class Subject;
 
 class Buzzer : public Monitor {
-private:
     void alarm();
 
 public:

@@ -1,7 +1,7 @@
 #include "distanceSensor.h"
 #include "buzzer.h"
-#include "controller.h"
 #include "light.h"
+#include "controller.h"
 #include <iostream>
 
 int main(int argc, char const *argv[]) {

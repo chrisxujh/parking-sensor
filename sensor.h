@@ -7,7 +7,6 @@ class SensorInfo;
 
 class Sensor : public Subject<SensorInfo> {
 
-
 public:
     Sensor();
     virtual ~Sensor();

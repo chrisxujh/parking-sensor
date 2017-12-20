@@ -7,6 +7,7 @@
 Controller::Controller() : Observer<SensorInfo>{}, Subject<ControllerInfo>{}, temp{std::make_unique<ControllerTemp>()} {
     temp->distance = 1000;
 }
+
 Controller::~Controller() {}
 
 void Controller::addSensor(Sensor *s) {

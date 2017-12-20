@@ -15,7 +15,6 @@ struct ControllerTemp {
 };
 
 class Controller : public Observer<SensorInfo>, public Subject<ControllerInfo> {
-private:
     std::unique_ptr<ControllerTemp> temp;
 
 public:

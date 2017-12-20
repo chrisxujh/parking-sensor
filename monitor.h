@@ -5,8 +5,6 @@
 class ControllerInfo;
 
 class Monitor : public Observer<ControllerInfo> {
-private:
-    /* data */
 
 public:
     Monitor();

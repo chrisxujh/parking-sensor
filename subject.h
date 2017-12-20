@@ -5,7 +5,6 @@
 
 template <typename T>
 class Subject {
-private:
     std::vector<Observer<T>*> observers;
 
 public:
