@@ -12,7 +12,7 @@ SensorInfo DistanceSensor::getInfo() {
 }
 
 void DistanceSensor::start() {
-    while (1 && this->interval >= 0) {
+    while (this->interval >= 0) {
         delay(this->interval);
         this->distance = supersonic_distance();
 
