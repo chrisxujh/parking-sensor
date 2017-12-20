@@ -26,7 +26,7 @@ void blink_green(const bool on) {
     }
 }
 
-double distance() {
+double supersonic_distance() {
     clock_t start,end,dur;
     double mseconds = 0;
 
@@ -46,7 +46,7 @@ double distance() {
     double clocks_per_mill = CLOCKS_PER_SEC / 1000;
 
     mseconds = dur / clocks_per_mill;
-    return mseconds * 0.343;
+    return mseconds * 34.3;
 }
 
 void init() {

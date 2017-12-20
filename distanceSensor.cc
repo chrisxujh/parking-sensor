@@ -3,6 +3,7 @@
 #include <iostream>
 #include <time.h>
 #include "wiringPi.h"
+#include "gpio_interface.h"
 
 DistanceSensor::DistanceSensor() : Sensor{}, distance{100}, interval{1000} {}
 
@@ -15,11 +16,12 @@ SensorInfo DistanceSensor::getInfo() {
 void DistanceSensor::start() {
     while (1 && this->interval >= 0) {
         delay(this->interval);
-        this->distance = simulateDistance();
+        this->distance = supersonic_distance();
         notifyObservers();
-        if (this->distance <= 50) {
+        if (this->distance <= 50 && this->interval >= 10) {
             this->setInterval(this->distance * 10);
         }
+        std::cout << "distance: " << this->distance << '\n';
     }
 }
 

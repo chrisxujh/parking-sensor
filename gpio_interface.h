@@ -6,4 +6,4 @@ void blink_green(const bool on);
 
 void init();
 
-double distance();
+double supersonic_distance();
