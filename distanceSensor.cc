@@ -4,7 +4,7 @@
 #include <time.h>
 #include "wiringPi.h"
 
-DistanceSensor::DistanceSensor() : distance{100} {}
+DistanceSensor::DistanceSensor() : Sensor{}, distance{100}, interval{1000} {}
 
 DistanceSensor::~DistanceSensor() {}
 
@@ -14,15 +14,18 @@ SensorInfo DistanceSensor::getInfo() {
 
 void DistanceSensor::start() {
     while (1) {
-        delay(1000);
+        delay(this->interval);
         this->distance = simulateDistance();
         notifyObservers();
     }
 }
 
+void DistanceSensor::setInterval(const double &inv) {
+    if (inv >= 0) this->interval = inv;
+}
 
 double DistanceSensor::simulateDistance() {
-    return distance - 10;
+    return distance - 10 >= 0 ? distance - 10 : 0;
 }
 
 double DistanceSensor::detectDistance() {

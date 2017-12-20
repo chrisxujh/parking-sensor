@@ -27,6 +27,7 @@ void Controller::notify(Subject<SensorInfo> &whoFrom) {
     notifyObservers();
     this->temp->distance = info.distance;
     std::cout << "Distance: " << info.distance << '\n';
+    if (info.distance <= 50) whoFrom.setInterval(info.distance * 10);
 }
 
 ControllerInfo Controller::getInfo() {
