@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -Wall -Werror=vla -MMD
-EXEC = test
+EXEC = main
 OBJECTS = main.o buzzer.o controller.o distanceSensor.o info.o monitor.o observer.o sensor.o subject.o
 DEPENDS = ${OBJECTS:.o=.d}
 

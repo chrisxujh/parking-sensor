@@ -1,6 +1,7 @@
 #include "distanceSensor.h"
 #include "buzzer.h"
 #include "controller.h"
+#include <iostream>
 
 int main(int argc, char const *argv[]) {
     Controller c{};
@@ -9,5 +10,6 @@ int main(int argc, char const *argv[]) {
     c.addSensor(&ds);
     c.addMonitor(&b);
     c.init();
+    ds.notifyObservers();
     return 0;
 }

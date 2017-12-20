@@ -2,6 +2,7 @@
 #include "info.h"
 #include "sensor.h"
 #include "monitor.h"
+#include <iostream>
 
 Controller::Controller() {}
 Controller::~Controller() {}
@@ -19,7 +20,7 @@ void Controller::init() {
 }
 
 void Controller::notify(Subject &whoFrom) {
-
+    std::cout << "Controller::notify()" << '\n';
 }
 
 Info Controller::getInfo() {
