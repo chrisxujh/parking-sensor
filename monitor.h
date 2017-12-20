@@ -8,8 +8,11 @@ private:
     /* data */
 
 public:
-    Monitor(arguments);
+    Monitor();
     virtual ~Monitor();
+
+    virtual void notify(Subject &) = 0;
+
 };
 
 #endif

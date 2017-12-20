@@ -3,12 +3,16 @@
 
 #include "sensor.h"
 
+class Info;
+
 class DistanceSensor : public Sensor {
 
 
 public:
-    DistanceSensor(arguments);
+    DistanceSensor();
     ~DistanceSensor();
+
+    Info getInfo() override;
 };
 
 #endif

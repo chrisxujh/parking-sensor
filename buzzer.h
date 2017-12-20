@@ -3,13 +3,17 @@
 
 #include "monitor.h"
 
+class Subject;
+
 class Buzzer : public Monitor {
 private:
     /* data */
 
 public:
-    Buzzer(arguments);
+    Buzzer();
     ~Buzzer();
+
+    void notify(Subject &) override;
 };
 
 #endif
