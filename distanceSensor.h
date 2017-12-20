@@ -6,8 +6,10 @@
 class SensorInfo;
 
 class DistanceSensor : public Sensor {
-    void simulate();
     double distance;
+
+    double detectDistance();
+    double simulateDistance();
 
 public:
     DistanceSensor();

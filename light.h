@@ -1,5 +1,5 @@
-#ifndef _BUZZER_H_
-#define _BUZZER_H_
+#ifndef _LIGHT_H_
+#define _LIGHT_H_
 
 #include "monitor.h"
 
@@ -7,13 +7,13 @@ class ControllerInfo;
 
 template <typename T> class Subject;
 
-class Buzzer : public Monitor {
+class Light : public Monitor {
 private:
     void alarm();
 
 public:
-    Buzzer();
-    ~Buzzer();
+    Light();
+    ~Light();
 
     void notify(Subject<ControllerInfo> &) override;
 };

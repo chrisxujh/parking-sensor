@@ -15,13 +15,17 @@ void DistanceSensor::start() {
     clock_t interval = CLOCKS_PER_SEC;
     while (1) {
         if (clock() % interval == 0) {
-            simulate();
+            this->distance = simulateDistance();
             notifyObservers();
         }
     }
 }
 
 
-void DistanceSensor::simulate() {
-    distance -= 10;
+double DistanceSensor::simulateDistance() {
+    return distance - 10;
+}
+
+double DistanceSensor::detectDistance() {
+    return 0;
 }

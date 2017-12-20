@@ -9,6 +9,11 @@ Buzzer::~Buzzer() {}
 void Buzzer::notify(Subject<ControllerInfo> &whoFrom) {
     ControllerInfo info = whoFrom.getInfo();
     if (info.distance <= 50) {
-        std::cout << "/* BUZZ */" << '\n';
+        this->alarm();
     }
+}
+
+
+void Buzzer::alarm() {
+    std::cout << "/* BUZZ */" << '\n';
 }
