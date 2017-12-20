@@ -12,7 +12,7 @@ public:
     virtual ~Sensor();
 
     virtual SensorInfo getInfo() = 0;
-    virtual setInterval(const double &) = 0;
+    virtual void setInterval(const double &) = 0;
 };
 
 #endif
