@@ -2,6 +2,7 @@
 #include "info.h"
 #include <iostream>
 #include <time.h>
+#include "wiringPi.h"
 
 DistanceSensor::DistanceSensor() : distance{100} {}
 
@@ -12,12 +13,10 @@ SensorInfo DistanceSensor::getInfo() {
 }
 
 void DistanceSensor::start() {
-    clock_t interval = CLOCKS_PER_SEC;
     while (1) {
-        if (clock() % interval == 0) {
-            this->distance = simulateDistance();
-            notifyObservers();
-        }
+        delay(1000);
+        this->distance = simulateDistance();
+        notifyObservers();
     }
 }
 

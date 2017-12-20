@@ -9,12 +9,20 @@ Light::~Light() {}
 
 void Light::notify(Subject<ControllerInfo> &whoFrom) {
     ControllerInfo info = whoFrom.getInfo();
-    if (info.distance <= 50) {
-        this->alarm();
+    if (info.distance >= 50) {
+        this->greenInfo();
+    }
+    else {
+        this->off();
     }
 }
 
 
-void Light::alarm() {
+void Light::off() {
+    blink_green(false);
+}
+
+
+void Light::greenInfo() {
     blink_green(true);
 }

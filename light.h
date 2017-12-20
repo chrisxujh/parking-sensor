@@ -9,7 +9,8 @@ template <typename T> class Subject;
 
 class Light : public Monitor {
 private:
-    void alarm();
+    void greenInfo();
+    void off();
 
 public:
     Light();
