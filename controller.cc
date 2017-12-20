@@ -24,9 +24,9 @@ void Controller::init() {
 
 void Controller::notify(Subject<SensorInfo> &whoFrom) {
     SensorInfo info = whoFrom.getInfo();
-    notifyObservers();
     this->temp->distance = info.distance;
     std::cout << "Distance: " << info.distance << '\n';
+    notifyObservers();
 }
 
 ControllerInfo Controller::getInfo() {

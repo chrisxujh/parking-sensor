@@ -17,8 +17,7 @@ void DistanceSensor::start() {
     while (1 && this->interval >= 0) {
         delay(this->interval);
         this->distance = supersonic_distance();
-        std::cout << "distance: " << this->distance << '\n';
-        
+
         notifyObservers();
         if (this->distance <= 50 && this->interval >= 10) {
             this->setInterval(this->distance * 10);
