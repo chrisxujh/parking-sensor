@@ -4,8 +4,8 @@
 
 #define BUZZER 5
 #define LED_SUCCESS 19
-#define DISTANCE_TRIG 16;
-#define DISTANCE_ECHO 20;
+#define DISTANCE_TRIG 16
+#define DISTANCE_ECHO 20
 
 
 void buzz(const bool on) {
@@ -30,15 +30,15 @@ double distance() {
     clock_t start,end,dur;
     double mseconds = 0;
 
-    digitalWrite(TRIG, HIGH);
+    digitalWrite(DISTANCE_TRIG, HIGH);
     delay(0.00001);
-    digitalWrite(TRIG, LOW);
-    while (!digitalRead(ECHO)) {
+    digitalWrite(DISTANCE_TRIG, LOW);
+    while (!digitalRead(DISTANCE_ECHO)) {
         continue;
     }
     start = clock();
 
-    while (digitalRead(ECHO)) {
+    while (digitalRead(DISTANCE_ECHO)) {
         continue;
     }
     end = clock();
