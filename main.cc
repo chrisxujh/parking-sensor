@@ -3,8 +3,10 @@
 #include "light.h"
 #include "controller.h"
 #include <iostream>
+#include "gpio_interface.h"
 
 int main(int argc, char const *argv[]) {
+    init();
     Controller c{};
     DistanceSensor ds{};
     Buzzer b{};

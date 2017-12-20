@@ -2,6 +2,7 @@
 #include <iostream>
 #include "info.h"
 #include "subject.h"
+#include "gpio_interface.h"
 
 Light::Light() {}
 Light::~Light() {}
@@ -15,5 +16,5 @@ void Light::notify(Subject<ControllerInfo> &whoFrom) {
 
 
 void Light::alarm() {
-    std::cout << "/* LIGHT */" << '\n';
+    blink_green(true);
 }

@@ -1,11 +1,11 @@
 CXX = g++
 CXXFLAGS = -std=c++14 -Wall -Werror=vla -MMD
 EXEC = main
-OBJECTS = main.o buzzer.o controller.o distanceSensor.o info.o monitor.o observer.o sensor.o subject.o light.o
+OBJECTS = main.o buzzer.o controller.o distanceSensor.o info.o monitor.o observer.o sensor.o subject.o light.o gpio_interface.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
-	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC}
+	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -lwiringPi
 
 -include ${DEPENDS}
 
