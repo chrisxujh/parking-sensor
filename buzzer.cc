@@ -24,5 +24,5 @@ void Buzzer::alarm() {
 }
 
 void Buzzer::alarmOff() {
-    buzz(off);
+    buzz(false);
 }
