@@ -1,5 +1,4 @@
 #include "light.h"
-#include <iostream>
 #include "info.h"
 #include "subject.h"
 #include "gpio_interface.h"

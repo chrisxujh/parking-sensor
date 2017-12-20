@@ -2,7 +2,6 @@
 #include "buzzer.h"
 #include "light.h"
 #include "controller.h"
-#include <iostream>
 #include "gpio_interface.h"
 
 int main(int argc, char const *argv[]) {
@@ -16,5 +15,6 @@ int main(int argc, char const *argv[]) {
     c.addMonitor(&l);
     c.init();
     ds.start();
+    close();
     return 0;
 }

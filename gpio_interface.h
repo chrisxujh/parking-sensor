@@ -4,6 +4,8 @@ void buzz(const bool on);
 
 void blink_green(const bool on);
 
+double supersonic_distance();
+
 void init();
 
-double supersonic_distance();
+void close();

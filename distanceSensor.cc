@@ -1,7 +1,5 @@
 #include "distanceSensor.h"
 #include "info.h"
-#include <iostream>
-#include <time.h>
 #include "wiringPi.h"
 #include "gpio_interface.h"
 
