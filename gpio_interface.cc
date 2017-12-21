@@ -6,6 +6,7 @@
 #define LED_SUCCESS 19
 #define DISTANCE_TRIG 16
 #define DISTANCE_ECHO 20
+#define SERVO_SIGNAL 12
 
 
 void buzz(const bool on) {
@@ -44,10 +45,32 @@ void init() {
     pinMode(LED_SUCCESS, OUTPUT);
     pinMode(DISTANCE_TRIG, OUTPUT);
     pinMode(DISTANCE_ECHO, INPUT);
+    init_servo();
 }
+
+void init_servo() {
+    pinMode(SERVO_SIGNAL, PWM_OUTPUT);
+    pwmSetMode(PWM_MODE_MS);
+    pwmSetRange(200);
+    pwmSetClock(1960);
+}
+
+void servo_rotate(const double &degree) {
+    if (degree < 0 || degree > 180) return;
+    int b = 10;
+    int e = 25;
+    double pwm = (degree / 180) * (e - b) + b;
+    pwmWrite(SERVO_SIGNAL, pwm);
+}
+
 
 void close() {
     digitalWrite(BUZZER, LOW);
     digitalWrite(LED_SUCCESS, LOW);
     digitalWrite(DISTANCE_TRIG, LOW);
+}
+
+void close_servo() {
+    pinMode(SERVO_SIGNAL, OUTPUT);
+    digitalWrite(SERVO_SIGNAL, LOW);
 }

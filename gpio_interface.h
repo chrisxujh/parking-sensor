@@ -8,4 +8,10 @@ double supersonic_distance();
 
 void init();
 
+void init_servo();
+
+void servo_rotate(const double &degree);
+
+void close_servo();
+
 void close();
