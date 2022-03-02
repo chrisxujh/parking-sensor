@@ -5,6 +5,4 @@ A parking sensor developed using C++ and raspberry Pi 3
 * Object Oriented Programming
 * Observer pattern
 
-Note: Just for fun, bad performance
-
 [YouTube Demo](https://www.youtube.com/watch?v=5cGRnKQr8CA)
